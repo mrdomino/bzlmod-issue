@@ -5,6 +5,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "github.com/mrdomino/bzlmod-issue/cmd/hello",
     visibility = ["//visibility:private"],
+    deps = ["//api"],
 )
 
 go_binary(
