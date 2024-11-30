@@ -2,10 +2,10 @@ module(
     name = "bzlmod-issue",
 )
 
-bazel_dep(name = "rules_go", version = "0.50.1")
+bazel_dep(name = "rules_go", version = "0.50.1", repo_name = "io_bazel_rules_go")
 bazel_dep(name = "gazelle", version = "0.40.0")
 
-go_sdk = use_extension("@rules_go//go:extensions.bzl", "go_sdk")
+go_sdk = use_extension("@io_bazel_rules_go//go:extensions.bzl", "go_sdk")
 go_sdk.download(version = "1.23.3")
 
 go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
